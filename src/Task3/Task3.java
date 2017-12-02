@@ -1,31 +1,20 @@
 package Task3;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+
 public class Task3 {
     public static void main(String[] args) {
-        int[] arr = new int[7];
-        int counter1 = 0, counter2 = 0, counter3 = 0;
-
-        int randomNumber = (int) (Math.random() * 10);
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = randomNumber;
-            randomNumber = (int) (Math.random() * 10);
-            System.out.print(arr[i] + " ");
+        ArrayList<Integer> randomNumber = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            int randomInt = (int) (Math.random() * 10);
+            Integer randomInteger = new Integer(randomInt);
+            randomNumber.add(randomInteger);
         }
-        System.out.println();
-        for (int i = 0; i < (arr.length); i++) {
-            for (int j = 0; j < (arr.length); j++) {
-                if (arr[i] == arr[j]) {
-                    counter1++;
-                }
-            }
-
-            if (counter1 == 1) {
-                counter2++;
-            }
-            if (counter1 > 1)
-                counter3++;
-            counter1 = 0;
-        }
-            System.out.println(counter2+counter3);
+        System.out.println(randomNumber);
+        HashSet<Integer> differntNumber = new HashSet<>(randomNumber);
+        System.out.println(differntNumber.size());
     }
 }
